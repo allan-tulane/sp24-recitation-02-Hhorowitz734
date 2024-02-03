@@ -17,8 +17,11 @@ def simple_work_calc(n, a, b):
 
 	Returns: the value of W(n).
 	"""
-	# TODO
-	pass
+	
+	if (n < b): return n #Base case -> if n < b, n // b will return 1 always, and it will continue forver
+
+	return a * simple_work_calc(n // b, a, b) + n #Code representation of aW(n/b) + n
+
 
 def work_calc(n, a, b, f):
 	"""Compute the value of the recurrence $W(n) = aW(n/b) + f(n)
